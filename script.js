@@ -51,16 +51,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (userWins === WINS_TO_END || compWins === WINS_TO_END) {
             playing = false;
 
-            let msg = "";
-            if (userWins > compWins) {
-                msg = `${playerName} переміг!\nРахунок: ${userWins} : ${compWins}`;
-            } else {
-                msg = `Комп'ютер переміг!\nРахунок: ${compWins} : ${userWins}`;
-            }
-
-            alert(msg);
+            setTimeout(() => {
+                let msg = "";
+                if (userWins > compWins) {
+                    msg = `${playerName} перемагає!\nРахунок: ${userWins} : ${compWins}`;
+                } else {
+                    msg = `Комп'ютер переміг!\nРахунок: ${compWins} : ${userWins}`;
+                }
+                
+                alert(msg);
+            }, 300);
         }
     }
 
     genBtn.addEventListener("click", playRound);
+
 });
